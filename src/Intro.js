@@ -1,35 +1,35 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 
 const styles = StyleSheet.create({
   image: {
     resizeMode:'contain',
     flex:0.2,
-    // width: 250,
-    // height: 150,
   },
   mainContent: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent:'center',
   },
   // image: {
   //   width: 320,
   //   height: 320,
   // },
   text: {
-    color: 'rgba(255, 255, 255, 0.8)',
+    color: 'rgb(155, 155, 155)',
     backgroundColor: 'transparent',
     textAlign: 'center',
+    fontSize:19,
     paddingHorizontal: 16,
+    marginTop: 5,
   },
   title: {
-    fontSize: 22,
-    color: 'white',
+    fontSize: 18,
+    color: 'rgb(74, 74, 74)',
     backgroundColor: 'transparent',
     textAlign: 'center',
-    marginBottom: 16,
+    marginTop: 16,
   }
 });
 
@@ -69,17 +69,35 @@ const slides = [
 ];
 
 export default class Intro extends React.Component {
-  state = {
+
+  constructor(props){
+    super(props)
+
+  this.state = {
     showRealApp: false
+  }
   }
   _onDone = () => {
     // User finished the introduction. Show real app through
     // navigation or simply by controlling state
     this.setState({ showRealApp: true });
   }
-  // _renderItem = props => (
-
-  // )
+  _renderItem = props => {
+    return (
+    <View style={[styles.mainContent,
+      {
+      paddingTop: props.topSpacer,
+      paddingBottom: props.bottomSpacer,
+      width: props.width,
+      height: props.height,
+    }]} >
+      <Image source={props.image} style={props.imageStyle} />
+      <View>
+        <Text style={styles.title}>{props.title}</Text>
+        <Text style={styles.text}>{props.text}</Text>
+      </View>
+    </View>)
+  }
   render() {
     if (this.state.showRealApp) {
       return <Intro />;
@@ -88,9 +106,10 @@ export default class Intro extends React.Component {
        <AppIntroSlider 
         slides={slides} 
         onDone={this._onDone}
-        // renderItem={this._renderItem}
-        bottomButton
-        
+        renderItem={this._renderItem}
+        bottomButton="SkipBtn"
+        skipLabel="시작하기"
+        skipBtn
         />
       );
     }
