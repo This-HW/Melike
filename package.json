@@ -15,6 +15,7 @@
     "babel-jest": "23.4.2",
     "babel-preset-react-native": "5.0.2",
     "jest": "23.5.0",
+    "react-native-app-intro-slider": "^1.0.1",
     "react-test-renderer": "16.4.1"
   },
   "jest": {
