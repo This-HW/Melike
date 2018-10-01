@@ -4,8 +4,9 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 
 const styles = StyleSheet.create({
   image: {
+    marginTop:25,
     resizeMode:'contain',
-    flex:0.24,
+    flex:0.26,
   },
   mainContent: {
     flex: 1,
@@ -35,6 +36,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius:5,
+  },
+  activeDotStyle: {
+    backgroundColor: 'rgb(255, 114, 108)',
+  },
+  dotStyle: {
+    backgroundColor: 'rgba(255, 114, 108, .4)',
+  },
+  buttonTextStyle : {
+    fontWeight : "bold",
   }
 });
 
@@ -121,6 +131,9 @@ export default class Intro extends React.Component {
         buttonStyle={styles.buttonStyle}
         onDone={this._onDone}
         onSkip={this._onDone}
+        activeDotStyle= { styles.activeDotStyle }
+        dotStyle= { styles.dotStyle }
+        buttonTextStyle={styles.buttonTextStyle}
         />
       );
     }
