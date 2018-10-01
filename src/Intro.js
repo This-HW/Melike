@@ -48,43 +48,42 @@ const styles = StyleSheet.create({
   }
 });
 
-//DeadLine intro items
-const slides = [
-  {
-    key: 'money_for',
-    title: '데드라인 손실방지 앱',
-    text: '데드라인을 놓쳐\n손해봤던 경험 있으신가요?',
-    image: require('./assets/money_for.png'),
-    imageStyle: styles.image,
-    backgroundColor: '#ffffff',
-  },
-  {
-    key: 'hand_for',
-    title: '한 번에! 간편 등록',
-    text: '로그인 한번으로 손쉽게 등록하고\n시간 순서대로 관리하세요',
-    image: require('./assets/hand_for.png'),
-    imageStyle: styles.image,
-    backgroundColor: '#ffffff',
-  },
-  {
-    key: 'sandglass_for',
-    title: '한 눈에! 마감 순위 정렬',
-    text: '데드라인 관련\n꿀정보까지 추천해드려요 :)',
-    image: require('./assets/sandglass_for.png'),
-    imageStyle: styles.image,
-    backgroundColor: 'ffffff',
-  },
-  {
-    key: 'alarm_for',
-    title: '리마인드',
-    text: '제 때 알람을 줘서\n까먹을 일 없어요!',
-    image: require('./assets/alarm_for.png'),
-    imageStyle: styles.image,
-    backgroundColor: 'ffffff',
-  }
-];
-
 export default class Intro extends React.Component {
+
+  slides = [
+    {
+      key: 'money_for',
+      title: '데드라인 손실방지 앱',
+      text: '데드라인을 놓쳐\n손해봤던 경험 있으신가요?',
+      image: require('./assets/money_for.png'),
+      imageStyle: styles.image,
+      backgroundColor: '#ffffff',
+    },
+    {
+      key: 'hand_for',
+      title: '한 번에! 간편 등록',
+      text: '로그인 한번으로 손쉽게 등록하고\n시간 순서대로 관리하세요',
+      image: require('./assets/hand_for.png'),
+      imageStyle: styles.image,
+      backgroundColor: '#ffffff',
+    },
+    {
+      key: 'sandglass_for',
+      title: '한 눈에! 마감 순위 정렬',
+      text: '데드라인 관련\n꿀정보까지 추천해드려요 :)',
+      image: require('./assets/sandglass_for.png'),
+      imageStyle: styles.image,
+      backgroundColor: 'ffffff',
+    },
+    {
+      key: 'alarm_for',
+      title: '리마인드',
+      text: '제 때 알람을 줘서\n까먹을 일 없어요!',
+      image: require('./assets/alarm_for.png'),
+      imageStyle: styles.image,
+      backgroundColor: 'ffffff',
+    }
+  ];
 
   constructor(props){
     super(props)
@@ -121,7 +120,7 @@ export default class Intro extends React.Component {
     } else {
       return (
        <AppIntroSlider 
-        slides={slides} 
+        slides={this.slides} 
         renderItem={this._renderItem}
         bottomButton
         showSkipButton
