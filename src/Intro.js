@@ -5,34 +5,40 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 const styles = StyleSheet.create({
   image: {
     resizeMode:'contain',
-    flex:0.2,
+    flex:0.24,
   },
   mainContent: {
     flex: 1,
     alignItems: 'center',
     justifyContent:'center',
   },
-  // image: {
-  //   width: 320,
-  //   height: 320,
-  // },
   text: {
     color: 'rgb(155, 155, 155)',
     backgroundColor: 'transparent',
     textAlign: 'center',
     fontSize:19,
+    fontWeight: "100",
     paddingHorizontal: 16,
     marginTop: 5,
   },
   title: {
     fontSize: 18,
+    fontWeight:'bold',
     color: 'rgb(74, 74, 74)',
     backgroundColor: 'transparent',
     textAlign: 'center',
-    marginTop: 16,
+    marginTop: 23,
+  },
+  buttonStyle:{
+    flex: 1,
+    backgroundColor: 'rgb(255, 114, 108)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius:5,
   }
 });
 
+//DeadLine intro items
 const slides = [
   {
     key: 'money_for',
@@ -82,6 +88,7 @@ export default class Intro extends React.Component {
     // navigation or simply by controlling state
     this.setState({ showRealApp: true });
   }
+  // Customizing the intro items for DeadLine
   _renderItem = props => {
     return (
     <View style={[styles.mainContent,
@@ -105,11 +112,15 @@ export default class Intro extends React.Component {
       return (
        <AppIntroSlider 
         slides={slides} 
-        onDone={this._onDone}
         renderItem={this._renderItem}
-        bottomButton="SkipBtn"
+        bottomButton
+        showSkipButton
         skipLabel="시작하기"
-        skipBtn
+        doneLabel="시작하기"
+        hideNextButton
+        buttonStyle={styles.buttonStyle}
+        onDone={this._onDone}
+        onSkip={this._onDone}
         />
       );
     }
