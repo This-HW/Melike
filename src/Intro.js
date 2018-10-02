@@ -2,51 +2,6 @@ import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 
-const styles = StyleSheet.create({
-  image: {
-    marginTop:25,
-    resizeMode:'contain',
-    flex:0.26,
-  },
-  mainContent: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent:'center',
-  },
-  text: {
-    color: 'rgb(155, 155, 155)',
-    backgroundColor: 'transparent',
-    textAlign: 'center',
-    fontSize:19,
-    fontWeight: "100",
-    paddingHorizontal: 16,
-    marginTop: 5,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight:'bold',
-    color: 'rgb(74, 74, 74)',
-    backgroundColor: 'transparent',
-    textAlign: 'center',
-    marginTop: 23,
-  },
-  buttonStyle:{
-    flex: 1,
-    backgroundColor: 'rgb(255, 114, 108)',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius:5,
-  },
-  activeDotStyle: {
-    backgroundColor: 'rgb(255, 114, 108)',
-  },
-  dotStyle: {
-    backgroundColor: 'rgba(255, 114, 108, .4)',
-  },
-  buttonTextStyle : {
-    fontWeight : "bold",
-  }
-});
 
 export default class Intro extends React.Component {
 
@@ -138,3 +93,50 @@ export default class Intro extends React.Component {
     }
   }
 }
+
+
+const styles = StyleSheet.create({
+  image: {
+    marginTop:25,
+    resizeMode:'contain',
+    flex:0.26,
+  },
+  mainContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent:'center',
+  },
+  text: {
+    color: 'rgb(155, 155, 155)',
+    backgroundColor: 'transparent',
+    textAlign: 'center',
+    fontSize:19,
+    fontWeight: "100",
+    paddingHorizontal: 16,
+    marginTop: 5,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight:'bold',
+    color: 'rgb(74, 74, 74)',
+    backgroundColor: 'transparent',
+    textAlign: 'center',
+    marginTop: 23,
+  },
+  buttonStyle:{
+    flex: 1,
+    backgroundColor: 'rgb(255, 114, 108)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius:5,
+  },
+  activeDotStyle: {
+    backgroundColor: 'rgb(255, 114, 108)',
+  },
+  dotStyle: {
+    backgroundColor: 'rgba(255, 114, 108, .4)',
+  },
+  buttonTextStyle : {
+    fontWeight : "bold",
+  }
+});
