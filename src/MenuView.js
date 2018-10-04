@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
-
+import Switch from 'react-native-switch-pro'
 
 export default class AccountControl extends React.Component {
 
@@ -9,7 +9,7 @@ export default class AccountControl extends React.Component {
   }
   
   state = {
-
+    alarmFlag:true
   }
 
   render(){
@@ -23,7 +23,8 @@ export default class AccountControl extends React.Component {
         <View style={styles.contents}>
           <TouchableOpacity style={styles.menu}>
             <Text style={styles.menuText} >알림설정</Text>
-            <Image source={require("./assets/arrow_right.png")} style={styles.buttonStyle} />
+            {/* Use component : react-native-switch-pro */}
+            <Switch onSyncPress={value => {this.alarmFlag}} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.menu}>
             <Text style={styles.menuText} >History 보기</Text>
