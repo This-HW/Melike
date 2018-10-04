@@ -54,7 +54,9 @@ const styles = StyleSheet.create({
   },
   topLine:{
     flex:0.1,
-    justifyContent:"space-between"
+    justifyContent:"flex-start",
+    backgroundColor: "#ff726c",
+    padding: 15,
   },
   contents:{
     flex:0.8,

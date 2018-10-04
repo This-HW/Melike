@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, Platform} from 'react-native';
 import Switch from 'react-native-switch-pro'
 
 export default class AccountControl extends React.Component {
@@ -9,15 +9,16 @@ export default class AccountControl extends React.Component {
   }
   
   state = {
-    alarmFlag:true
+    alarmFlag:true,
+    mailAdress:"aaaa@aaaa.com"
   }
 
   render(){
-
+    
     return(
       <View style={styles.container}>
         <View style={styles.topLine}>
-          <Text>위쪽</Text>
+          <Text style={{color:"#ffffff", fontSize:15, }}>{this.mailAdress}</Text>
         </View>
 
         <View style={styles.contents}>
@@ -57,10 +58,7 @@ export default class AccountControl extends React.Component {
         
         </View>
 
-        <View style={styles.bottomLine}>
-          <Text>아래쪽</Text>
-        </View>
-
+ 
       </View>
     );
 
@@ -74,20 +72,20 @@ const styles = StyleSheet.create({
     flex: 1
   },
   topLine:{
-    flex:0.1,
-    justifyContent:"space-between"
+    height: Platform.OS === "ios" ? 122 : 100,
+    justifyContent:"space-between",
+    justifyContent:"flex-start",
+    backgroundColor: "#ff726c",
+    padding: 15,
+    justifyContent: "flex-end",
   },
   contents:{
-    flex:0.8,
+    flex:1,
     alignItems:"center",
     justifyContent:"flex-start",
     padding: 15,
     alignItems: "stretch",
-    paddingTop: 38,
-  },
-  bottomLine:{
-    flex:0.1,
-    justifyContent:"space-between"
+    paddingTop: 5,
   },
   menu:{
    borderBottomWidth:0.5,
@@ -103,7 +101,7 @@ const styles = StyleSheet.create({
     margin:14,
     marginLeft:5,
     color:"#4a4a4a", 
-    fontWeight:"100"
+    fontWeight:"200"
   },
   texts:{
     fontSize:14,
