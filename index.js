@@ -5,7 +5,8 @@ import {AppRegistry} from 'react-native';
 // import {name as DeadLine} from './app.json';
 // import DeadLines from './src/Deadlines';
 // import Intro from './src/Intro';
-import PwChange from './src/PwChange';
+// import PwChange from './src/PwChange';
+import AccountControl from './src/AccountControl';
 import {name as DeadLine} from './app.json';
 
-AppRegistry.registerComponent(DeadLine, () => PwChange);
+AppRegistry.registerComponent(DeadLine, () => AccountControl);
