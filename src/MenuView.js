@@ -15,10 +15,7 @@ export default class AccountControl extends React.Component {
 
 
   handleAlarm = () => {
-    const alarmFlag = this.state.alarmFlag;
-    {console.log("알람 함수 실행 전: ",this.state.alarmFlag)}
-    this.setState({ alarmFlag: !alarmFlag});
-    {console.log("알람 함수 실행 후: ", this.state.alarmFlag)}
+    this.setState({ alarmFlag: !this.state.alarmFlag});
   }
 
   render(){

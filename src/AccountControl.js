@@ -17,7 +17,7 @@ export default class AccountControl extends React.Component {
     return(
       <View style={styles.container}>
         <View style={styles.topLine}>
-          <Text>위쪽</Text>
+          {/* 패널 삽입부 */}
         </View>
 
         <View style={styles.contents}>
@@ -37,7 +37,7 @@ export default class AccountControl extends React.Component {
         </View>
 
         <View style={styles.bottomLine}>
-          <Text>아래쪽</Text>
+          {/* 쓰지 않지만 혹시 모르니 유지 */}
         </View>
 
       </View>
