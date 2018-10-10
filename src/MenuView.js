@@ -49,26 +49,24 @@ export default class AccountControl extends React.Component {
             <Text style={styles.menuText} >필요한 친구에게 추천하기</Text>
             <Image source={require("./assets/arrow_right.png")} style={styles.buttonStyle} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menu}>
+          {/* 추후 활성화 예정 */}
+          {/* <TouchableOpacity style={styles.menu}>
             <Text style={styles.menuText} >내 정보동의 설정</Text>
             <Image source={require("./assets/arrow_right.png")} style={styles.buttonStyle} />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity style={styles.menu}>
             <Text style={styles.menuText} >계정관리</Text>
             <Image source={require("./assets/arrow_right.png")} style={styles.buttonStyle} />
           </TouchableOpacity>
-          <View style={{marginTop:10, padding:7, paddingLeft: 10}}>
+        </View>
+        <View style={{marginTop:10, padding:7, paddingLeft: 10, marginBottom:60}}>
             <View style={{flexDirection:"row", alignItems:"flex-end"}}>
               <Text style={{ fontSize: 19, fontWeight:"bold",  fontStyle:"italic", margin:5, color:"#3a3a3a" }}>deadline</Text>
               <Text style={styles.texts}>beta ver.0.1</Text>
             </View>
             <Text style={styles.texts}> (주)미라이크 : 서울시 성수이로 22길 37 202호</Text>
             <Text style={styles.texts}> 불편, 개선사항 보내기 : jung@amatta.kr</Text>
-          </View>
-        
-        </View>
-
- 
+          </View> 
       </View>
     );
 
