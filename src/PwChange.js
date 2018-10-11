@@ -1,40 +1,46 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
-
+import { StyleSheet, View, TextInput, Text, Image, TouchableOpacity} from 'react-native';
 
 export default class PwChange extends React.Component {
-
+  
   constructor (props) {
     super (props)
+    
+    this.state = {
+      changePw: false,
+      en_prePw:"",
+      en_chPw:"",
+      en_confPw:"",
+      prePw:"",
+    }
   }
   
-  state = {
-    changePw: false
-  }
 
   render(){
 
     return(
       <View style={styles.container}>
         <View style={styles.topLine}>
-
-          <Text>위쪽</Text>
+          {/* 패널 삽입부 */}
         </View>  
         <View style={styles.contents}>
         
           <View style={styles.boxDesign}>
-            <Text style={styles.boxText}>현재 비밀번호</Text>
-            <Image source={require("./assets/x_icon_circle.png")} style={styles.x_Icon} />
+            <Text style={styles.inputText}>현재 비밀번호</Text>
+            <TextInput textContentType="password" secureTextEntry={true} style={styles.inputBox} placeholder={"입력하세요"}></TextInput>
+            <TouchableOpacity><Image source={require("./assets/x_icon_circle.png")} style={styles.x_Icon} /></TouchableOpacity>
           </View>
 
           <View style={styles.boxDesign}>
-            <Text style={styles.boxText}>비밀번호</Text>
-            <Image source={require("./assets/x_icon_circle.png")} style={styles.x_Icon} />
+            <Text style={styles.inputText}>비밀번호</Text>
+            <TextInput textContentType="password" secureTextEntry={true} style={styles.inputBox} placeholder={"입력하세요"}></TextInput>
+            <TouchableOpacity><Image source={require("./assets/x_icon_circle.png")} style={styles.x_Icon} /></TouchableOpacity>
           </View>
 
           <View style={styles.boxDesign}>
-            <Text style={styles.boxText}>비밀번호 확인</Text>
-            <Image source={require("./assets/x_icon_circle.png")} style={styles.x_Icon} />
+            <Text style={styles.inputText}>비밀번호 확인</Text>
+            <TextInput textContentType="password" secureTextEntry={true} style={styles.inputBox} placeholder={"입력하세요"}></TextInput>
+            <TouchableOpacity><Image source={require("./assets/x_icon_circle.png")} style={styles.x_Icon} /></TouchableOpacity>
           </View>
 
           <TouchableOpacity style={styles.confirmButton}>
@@ -43,8 +49,7 @@ export default class PwChange extends React.Component {
 
         </View>
         <View style={styles.bottomLine}>
-          <Text>아래쪽</Text>
-
+          {/* 쓰지는 않지만 틀은 유지 */}
         </View>
 
       </View>
@@ -77,22 +82,36 @@ const styles = StyleSheet.create({
 
   },
   boxDesign:{
-    flex: 0.12,
+//    flex: 0.12,
+    height: 45,
     flexDirection:"row",
     borderRadius: 23,
     backgroundColor: "rgba(219, 219, 219, 0.2)",
-    paddingLeft:15,
+    paddingLeft:5,
     paddingRight:15,
     margin: 10,
     alignItems: "center",
+    textAlign:"center",
     justifyContent:"space-between",
 
   },
-  boxText:{
+  inputText : {
+    flex:0.35,
     color: "#4f4f4f",
     fontWeight:"normal",
-    fontSize: 16.5,
+    fontSize: 16,
     letterSpacing: 0.35,
+    marginLeft:13,
+    marginRight: 0,
+  },
+  inputBox:{
+    flex:0.65,
+    color: "#4f4f4f",
+    fontWeight:"normal",
+    fontSize: 16,
+    letterSpacing: 0.35,
+    height:35,
+    marginLeft:7,
     
   },
   x_Icon:{
@@ -102,7 +121,8 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   confirmButton:{
-    flex: 0.11,
+//    flex: 0.11,
+    height: 42,
     borderRadius:23,
     backgroundColor:"#ff726c",
     margin: 10,
