@@ -1,47 +1,55 @@
 import React, { Component } from 'react';
-import { AppRegistry, ScrollView, Image, Text } from 'react-native';
+import { TouchableOpacity, StyleSheet, View, ScrollView, Image, Dimensions, Text } from 'react-native';
 
-export default class IScrolledDownAndWhatHappenedNextShockedMe extends Component {
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
+export default class deadlineMenual extends Component {
   render() {
       return (
-        <ScrollView>
-          <Text style={{fontSize:96}}>Scroll me plz</Text>
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Text style={{fontSize:96}}>If you like</Text>
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Text style={{fontSize:96}}>Scrolling down</Text>
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Text style={{fontSize:96}}>What's the best</Text>
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Text style={{fontSize:96}}>Framework around?</Text>
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-          <Text style={{fontSize:80}}>React Native</Text>
-        </ScrollView>
+
+        <View style={styles.container}>
+          <View style={styles.header}>
+            <View style={{flex:0.45}}></View>
+            <Text style={{fontSize:25, color:"white", fontWeight: "bold",}}>데드라인 사용법</Text>
+            <TouchableOpacity><Image source={require("./assets/x_white.png")} style={styles.xIcon} /></TouchableOpacity>
+          </View>
+          <ScrollView styele={{flex:1, alignItems:"flex-start", justifyContent:"flex-start"}} >
+            <Image source={require("./assets/deadlineMenual.jpeg")} style={styles.image} />
+            {console.log("여기까지 오는지 보자")}
+          </ScrollView>
+        </View>
     );
   }
 }
 
-// skip these lines if using Create React Native App
-AppRegistry.registerComponent(
-  'AwesomeProject',
-  () => IScrolledDownAndWhatHappenedNextShockedMe);
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor:"#ff726c",
+    alignItems:'flex-start',
+    justifyContent:'center',
+  },
+  header: {
+    flex: 0.05,
+    flexDirection:"row",
+    backgroundColor: "#ff726c",
+    padding:5,
+    alignSelf:"stretch",
+    alignItems:"center",
+    justifyContent: "space-between",
+  },
+  image: {
+    alignSelf:"flex-start",
+    backgroundColor:"red",
+    padding:0,
+    margin:0,
+    maxWidth: windowWidth,
+    maxHeight: windowWidth*7.872,
+    resizeMode:'contain',
+  },
+  xIcon:{
+    resizeMode:'contain',
+    maxHeight: 13,
+  }
+})
