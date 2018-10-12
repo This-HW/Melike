@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, StyleSheet, View, ScrollView, Image, Dimensions, Text } from 'react-native';
+import { TouchableOpacity, StyleSheet, View, ScrollView, Image, Dimensions, Text, Platform } from 'react-native';
+import ScrollUpButton from "react-scroll-up-button";
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+// const windowHeight = Dimensions.get('window').height;
 
-export default class deadlineMenual extends Component {
+export default class DeadlineMenual extends Component {
   render() {
       return (
 
@@ -16,7 +17,7 @@ export default class deadlineMenual extends Component {
           </View>
           <ScrollView styele={{flex:1, alignItems:"flex-start", justifyContent:"flex-start"}} >
             <Image source={require("./assets/deadlineMenual.jpeg")} style={styles.image} />
-            {console.log("여기까지 오는지 보자")}
+            {/* <ScrollUpButton style={{width: 75}} ToggledStyle={{right: 100}} /> */}
           </ScrollView>
         </View>
     );
@@ -33,8 +34,8 @@ const styles = StyleSheet.create({
   header: {
     flex: 0.05,
     flexDirection:"row",
-    backgroundColor: "#ff726c",
-    padding:5,
+    backgroundColor: "#ff726c",    
+    paddingTop : Platform.OS === "ios" ? 27 : 5,
     alignSelf:"stretch",
     alignItems:"center",
     justifyContent: "space-between",
