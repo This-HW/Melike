@@ -1,6 +1,6 @@
 Deadlines
 import React, {Component} from 'react';
-import { StyleSheet, FlatList, Text, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, } from 'react-native';
 import DeadlineItem from './DeadlineItem';
 import { SwipeListView, SwipeRow } from 'react-native-swipe-list-view';
 
