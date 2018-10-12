@@ -6,19 +6,35 @@ const windowWidth = Dimensions.get('window').width;
 // const windowHeight = Dimensions.get('window').height;
 
 export default class DeadlineMenual extends Component {
+
+  scrollToTop = () => {
+    this.scroller.scrollTo({x: 0, y: 0});
+  };
+
   render() {
       return (
 
         <View style={styles.container}>
           <View style={styles.header}>
-            <View style={{flex:0.45}}></View>
-            <Text style={{fontSize:25, color:"white", fontWeight: "bold",}}>데드라인 사용법</Text>
-            <TouchableOpacity><Image source={require("./assets/x_white.png")} style={styles.xIcon} /></TouchableOpacity>
+            {/* <View style={{flex:0.45}}></View> */}
+            <Text style={{fontSize:20, color:"white", fontWeight: "bold",}}>데드라인 사용법</Text>
+            <TouchableOpacity style={{ position:"absolute", right:3, bottom: 25}}><Image source={require("./assets/x_white.png")} style={styles.xIcon} /></TouchableOpacity>
           </View>
-          <ScrollView styele={{flex:1, alignItems:"flex-start", justifyContent:"flex-start"}} >
+          <ScrollView
+            title="manualView"
+            style={{flex:1 }}
+            ref={(scroller) => {this.scroller = scroller}}
+            >
+            
             <Image source={require("./assets/deadlineMenual.jpeg")} style={styles.image} />
-            {/* <ScrollUpButton style={{width: 75}} ToggledStyle={{right: 100}} /> */}
+            
           </ScrollView>
+          <TouchableOpacity
+            style={{position:'absolute', right:-75, bottom:30, opacity:1}}
+            onPress={this.scrollToTop}
+            >
+            <Image source={require("./assets/top_buttton.png")} style={{resizeMode:"contain", maxHeight:40 ,opacity:1, backgroundColor:"transparent"}} />
+          </TouchableOpacity>
         </View>
     );
   }
@@ -28,29 +44,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor:"#ff726c",
-    alignItems:'flex-start',
+    // backgroundColor:"yellow",
+    alignItems:'stretch',
     justifyContent:'center',
   },
   header: {
     flex: 0.05,
     flexDirection:"row",
-    backgroundColor: "#ff726c",    
-    paddingTop : Platform.OS === "ios" ? 27 : 5,
-    alignSelf:"stretch",
+    backgroundColor: "#ff726c",
+    // backgroundColor: "blue",    
+    paddingTop : Platform.OS === "ios" ? 37 : 15,
     alignItems:"center",
-    justifyContent: "space-between",
+    justifyContent: "center",
+    padding:15,
   },
   image: {
     alignSelf:"flex-start",
-    backgroundColor:"red",
     padding:0,
     margin:0,
-    maxWidth: windowWidth,
-    maxHeight: windowWidth*7.872,
+    width: windowWidth,
+    height: windowWidth*7.872,
     resizeMode:'contain',
   },
   xIcon:{
     resizeMode:'contain',
-    maxHeight: 13,
+    maxHeight: 14,
   }
 })
