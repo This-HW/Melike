@@ -40,7 +40,6 @@ export default class InviteFriends extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor:"blue",
     },
   header: {
     flex: Platform.OS === "ios" ? 0.11 : 0.1,
@@ -52,7 +51,6 @@ const styles = StyleSheet.create({
     flex: Platform.OS === "ios" ? 0.89 : 0.9,
     alignItems: "center",
     justifyContent: "center",
-    // backgroundColor:"green",
   },
   boldStyle:{
     color: "#f3403f",
