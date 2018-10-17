@@ -31,12 +31,9 @@ export default class AccountControl extends React.Component {
             onPress={() => {this.handleAlarm()}}>
             <Text style={styles.menuText} >알림설정</Text>
             {/* Use component : react-native-switch-pro */}
-            {console.log("클릭 전 Flag: ",this.state.alarmFlag)}
             <Switch value={this.state.alarmFlag} onSyncPress={ () => {this.handleAlarm()}} />
-            {console.log("클릭 후 Flag: ",this.state.alarmFlag)}
-            {console.log("mailAdress: ",this.state.mailAddress)}
-
           </TouchableOpacity>
+          
           <TouchableOpacity style={styles.menu}>
             <Text style={styles.menuText} >History 보기</Text>
             <Image source={require("./assets/arrow_right.png")} style={styles.buttonStyle} />
