@@ -23,4 +23,4 @@ import {AppRegistry} from 'react-native';
 
 import Register from './src/Register';
 import {name as DeadLine} from './app.json';
-AppRegistry.registerComponent(DeadLine, () => Register );
+AppRegistry.registerComponent(DeadLine, () => Register);
