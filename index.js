@@ -21,6 +21,6 @@ import {AppRegistry} from 'react-native';
 // import DeadlineMenual from './src/DeadlineMenual';
 // import InviteFriends from './src/InviteFriends';
 
-import Register from './src/Register';
+import Agreements from './src/Agreements';
 import {name as DeadLine} from './app.json';
-AppRegistry.registerComponent(DeadLine, () => Register);
+AppRegistry.registerComponent(DeadLine, () => Agreements);
