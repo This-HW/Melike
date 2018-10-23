@@ -4,7 +4,7 @@ import { TouchableOpacity, StyleSheet, View, ScrollView, Image, Text, Platform }
 export default class Agreements extends Component {
   
   static defaultProps={
-    flag:2
+    flag:1
   }
 
   constructor (props) {
@@ -31,9 +31,7 @@ export default class Agreements extends Component {
                 : "개인정보 취급방침"
                 }
             </Text>
-            <TouchableOpacity style={{ alignItems:"center", justifyContent:"center", width:17, height:17, position:"absolute", right:25, bottom: 21}}
-              onPress={}
-              >
+            <TouchableOpacity style={{ alignItems:"center", justifyContent:"center", width:17, height:17, position:"absolute", right:25, bottom: 21}} >
               <Image source={require("./assets/x_icon_r.png")} style={styles.xIcon} />
             </TouchableOpacity>
           </View>
