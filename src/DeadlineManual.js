@@ -127,12 +127,10 @@ const styles = StyleSheet.create({
     fontSize:17,
     margin:15,
     marginLeft:0,
-    // alignSelf:"center",
   },
   text:{
     fontSize:14,
     margin:2,
     marginLeft:0,
-    // alignSelf:"center",
   }
 })
